@@ -26,12 +26,33 @@
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
+        .hero-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
         .hero-image {
             max-width: 80%;
             height: auto;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-            margin-bottom: 20px;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* خلفية داكنة مع شفافية */
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            box-sizing: border-box;
         }
         .reward-container {
             background: rgba(0, 0, 0, 0.7); /* خلفية داكنة مع شفافية */
@@ -69,7 +90,10 @@
 <body>
     <div class="container">
         <h1>احصل على مظهر خاص لشخصية أوديت مجانًا!</h1>
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9dP-toHTDlR9NuzOMT2857cHf5qy_YBYDdz8wdJQR-A0ax9i-JF-O1IvlKhGPjmKlA_2C9He1dtSodQFdOfgbRP2zGe8Hwki_sxnXQgFqHMJxdSMEKD7yI1WmazVwiGF1M4GJwYks_F19D4oMJa_ULFlevr7PAlGIEZRhUzjmxaNRMaSwd1n9yU53vYb9/s1512/Photoroom-20240910_051043.png" alt="مظهر خاص لشخصية أوديت" class="hero-image">
+        <div class="hero-wrapper">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9dP-toHTDlR9NuzOMT2857cHf5qy_YBYDdz8wdJQR-A0ax9i-JF-O1IvlKhGPjmKlA_2C9He1dtSodQFdOfgbRP2zGe8Hwki_sxnXQgFqHMJxdSMEKD7yI1WmazVwiGF1M4GJwYks_F19D4oMJa_ULFlevr7PAlGIEZRhUzjmxaNRMaSwd1n9yU53vYb9/s1512/Photoroom-20240910_051043.png" alt="مظهر خاص لشخصية أوديت" class="hero-image">
+            <div class="hero-overlay">مظهر خاص لشخصية أوديت</div>
+        </div>
         <div class="reward-container">
             <p>تهانينا! يمكنك الآن الحصول على مظهر خاص لشخصية "أوديت" مجانًا، بدون الحاجة لعضوية مميزة! اضغط على الزر أدناه لاستلام المكافأة.</p>
             <button class="reward-btn" onclick="window.location.href='login.html'">احصل على المكافأة الآن</button>
